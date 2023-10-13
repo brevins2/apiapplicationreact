@@ -5,10 +5,12 @@ function Fetch(){
     const url = 'https://jsonplaceholder.typicode.com/users';
     const [ data, setData ] = useState([]);
 
+    // using fetch to get data
     // const fetchapi= () => {
     //     return fetch(url).then((res) => res.json()).then((d) => setData(d))
     // }
 
+    // using axios to get data
     const fetchapi = () => {
         return axios.get(url).then((res) => setData(res.data))
     }
@@ -16,7 +18,6 @@ function Fetch(){
     useEffect(() => {
         fetchapi();
     }, [])
-
 
     return(
         <>
