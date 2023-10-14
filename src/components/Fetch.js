@@ -11,7 +11,7 @@ function Fetch(){
     // }
 
     // using axios to get data
-    const fetchapi = () => {
+    function fetchapi() {
         return axios.get(url).then((res) => setData(res.data))
     }
 
@@ -26,7 +26,7 @@ function Fetch(){
                 {data.map((dataObj, index) => {
                 return (
                     <section>
-                        <div style={{ width: "15em", backgroundColor: "#35D841", padding: 2, borderRadius: 10, marginBlock: 10 }}>
+                        <div key="{dataObj}" style={{ width: "15em", backgroundColor: "#35D841", padding: 2, borderRadius: 10, marginBlock: 10 }}>
                             <p style={{ fontSize: 20, color: 'white' }}>{dataObj.address.geo.lat}</p>
                         </div>
                     </section>
