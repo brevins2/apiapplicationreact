@@ -3,16 +3,38 @@ import axios from 'axios'
 
 function Form(){
 
-	// const url = 'https://jsonplaceholder.typicode.com/users';
-	const [data, setData] = useState({
-			name: "",
-			date: ""
-		});
-	const upload = async() => {
-		try {}
-		catch(error){
-			console.log(error)
-		}
+	// const url = '/home/brevin/Documents/React/apicalls/src/components/data.json';
+	// const [data, setData] = useState({
+	// 		name: "",
+	// 		date: ""
+	// 	});
+	// const upload = async() => {
+	// 	try {
+	// 		const newdata = {...data}
+	// 		const response = await axios.post(url, {
+	// 			id: 11,
+	// 			name: 'brevin',
+	// 			username: 'brev',
+	// 			email: 'email@me.com'
+	// 		})
+	// 		console.log(response)
+	// 	}
+	// 	catch(error){
+	// 		console.log(error)
+	// 	}
+
+		const upload = async () => {
+	    try {
+	      const response = await axios.post('https://jsonplaceholder.typicode.com/users', {
+	        id: 11,
+				name: 'brevin',
+				username: 'brev',
+				email: 'email@me.com'
+	      });
+	      console.log(response.data);
+	    } catch (error) {
+	      console.error(error);
+	    }
 	}
 
 	return(
@@ -27,7 +49,8 @@ function Form(){
 			</div>
 
 			<div style={{marginTop: '2rem', width: '100%', textAlign: 'center'}}>
-				<input type="submit" name="upload" value="submit data" style={{width: '30%'}} />
+				{/*<input type="submit" name="upload" value="submit data" style={{width: '30%'}} />*/}
+				<button>submit data</button>
 			</div>
 		</form>
 	);
